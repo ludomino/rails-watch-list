@@ -1,14 +1,22 @@
-<h1>My New List</h1>
-
-<%= simple_form_for(@list) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
+<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1578674473215-9e07ee2e577d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTQ4fHxtb3ZpZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)">
+  <div class="container">
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+<div class="new-lists">
+  <div class="new-list">
+    <h1>Create my own movie <strong>list</strong> !</h1>
+      <%= simple_form_for(@list) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :name %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
   </div>
-<% end %>
+</div>
